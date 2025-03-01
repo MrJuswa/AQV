@@ -396,24 +396,19 @@
     font-weight: bold;
 }
 		
-	/* Base styles */
-#coral-gallery {
-  margin-top: 50px; /* Adds space above the Coral Gallery section */
-}
-
-/* Media Queries for Tablet */
+/* Mobile and Tablet specific spacing */
 @media (max-width: 768px) {
-  #coral-gallery {
-    margin-top: 40px; /* Adjusts the space for tablet view */
-  }
+    .awareness-card h2 + h2 {
+        margin-top: 30px; /* Add space only for tablet and mobile */
+    }
 }
 
 /* Media Queries for Mobile */
 @media (max-width: 480px) {
-  #coral-gallery {
-    margin-top: 30px; /* Adjusts the space for mobile view */
-  }
-}	
+    .awareness-card h2 + h2 {
+        margin-top: 20px; /* Adjust space for mobile */
+    }
+}
 	
 	
 </style>
