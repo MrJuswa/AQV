@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaVive | Codex </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+<style>
+    /* General Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;  /* Hide horizontal scrollbar */
+    overflow-y: auto;    /* Enable vertical scrolling */
+    font-family: Arial, sans-serif;
+    color: #e5e5e5;
+}
+
+/* Universal Box Sizing */
+* {
+    box-sizing: border-box; /* Prevents padding/margin from causing overflow */
+}
+
+/* Body */
+ body {
+        background-image: url(https://img.huffingtonpost.com/asset/596359141500002000bfcc70.jpeg?ops=1778_1000.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #e5e5e5;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        animation: moveBackground 30s infinite alternate ease-in-out;
+		flex: 1 0 auto; /* Allow the body to grow and take remaining space */
+        
+    }
+
+/* Body Overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+        background: linear-gradient(135deg, #25304a, #141c2e);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        border-bottom: 2px solid #4a75a8;
+        padding-left: 20px;
+        height: 80px;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .navbar-brand span {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .nav-link {
+        color: #ffffff !important;
+        margin: 0 10px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: transform 0.3s ease, color 0.3s ease;
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: #4a75a8;
+        left: 50%;
+        bottom: -5px;
+        transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-link:hover {
+        transform: scale(1.1);
+        color: #4a75a8 !important;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
+        left: 0;
+    }
+
+    .nav-link.active {
+        color: #6ea2e2 !important;
+    }
+	
+	
+	 @media (max-width: 991px) {
+            .navbar {
+                height: 80px;
+                display: flex;
+                align-items: center;
+                padding: 0 15px;
+            }
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+            }
+            .navbar-toggler {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-color: white !important;
+            }
+            .navbar-toggler-icon {
+                filter: invert(1);
+				background-color: white;
+            }
+            .navbar-collapse {
+                background: linear-gradient(135deg, #25304a, #141c2e);
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .nav-item {
+                text-align: center;
+            }
+        }
+	
+
+/* Call-to-action Button */
+.cta-btn {
+    background-color: #4a75a8;
+    border: none;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #6ea2e2;
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero {
+    height: 50vh;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Helvetica';
+    font-size: 5rem;
+    color: #FFD700;
+    z-index: 1;
+}
+
+
+
+/* Background Movement Animation */
+@keyframes moveBackground {
+    0% {
+        background-position: center top;
+    }
+    50% {
+        background-position: center center;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
+
+	/* Navigation Links Section */
+        .navigation-links .card {
+            background-color: rgba(37, 48, 74, 0.8);
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .navigation-links .card img {
+            width: 60px;
+            height: 60px;
+            margin: 15px auto 0;
+        }
+
+        .navigation-links h5 {
+            margin: 15px 0 10px;
+            font-size: 1.25rem;
+            font-weight: bold !important;
+            color: white !important;
+        }
+
+        .navigation-links p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .navigation-links .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+            background-color: rgba(46, 61, 90, 0.9);
+			border: 3px solid white; /* Add a white border on hover */
+        }
+
+
+		
+        /* Awareness Tab - Specific CSS */
+        .awareness-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .awareness-card {
+            background-color: rgba(75, 46, 97, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 15px 20px;
+            text-align: center;
+            width: 1290px;
+        }
+
+        .awareness-card h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFD700 !important;
+            margin: 0;
+        }
+
+
+/* Gradient Button */
+.gradient-btn {
+    background: linear-gradient(135deg, #5b8cea, #e910fc);
+    color: #ffffff !important;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.gradient-btn:hover {
+    background: linear-gradient(135deg, #e910fc, #5b8cea);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Coral List Section */
+.coral-list-section {
+    background: rgba(20, 28, 46, 0.9);
+    padding: 50px 20px;
+    border-radius: 15px;
+    text-align: left;
+    margin-top: 40px;
+	
+}
+
+.coral-list-title {
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 20px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.coral-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+	transition: color 0.3s ease, text-shadow 0.3s ease;
+	
+}
+
+.coral-list li {
+    font-size: 1.2rem;
+    color: #b0c4de;
+	transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.coral-list li:hover {
+    color: #ffffff;  /* Change text color to white */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);  /* Glow effect */
+}
+
+@media (max-width: 768px) {
+    .coral-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .coral-list-title {
+        font-size: 1.5rem;
+    }
+    .coral-list li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .coral-list {
+        grid-template-columns: 1fr;
+    }
+    .coral-list-title {
+        font-size: 1.2rem;
+    }
+    .coral-list li {
+        font-size: 0.9rem;
+    }
+}
+
+
+ 
+		
+		
+	/* Carousel */
+.codex-carousel {
+    background: rgba(20, 28, 46, 0.9);  /* Match coral list background */
+    border: 2px solid #FFD700;  /* Similar gold accent border */
+    width: 75%;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: 270px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 20s linear infinite;
+    min-height: 250px;
+}
+
+.coral-card {
+    min-width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  /* Similar shadow to the coral list cards */
+    background: #25304a;  /* Same dark background */
+    color: #e5e5e5;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    border: 3px solid #a1c7db;  /* Soft purple accent border */
+}
+
+.coral-card img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.coral-card:hover img {
+    transform: translateY(-10px);
+}
+
+.coral-card:hover {
+    transform: scale(1.05);  /* Hover effect for card expansion */
+}
+
+.coral-container {
+    min-height: 300px;
+}
+
+.coral-card.hidden-placeholder {
+    visibility: hidden;
+    height: 150px;
+}
+
+.card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 28, 46, 0.8);
+    color: #FFD700;  /* Match the golden text */
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.coral-card:hover .card-body {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-title {
+    font-family: 'Raleway', sans-serif;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+}
+
+/* Scroll Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .codex-carousel {
+        width: 90%;
+    }
+
+    .carousel-track {
+        gap: 10px;
+    }
+
+    .coral-card {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .codex-carousel {
+        width: 100%;
+    }
+
+    .carousel-track {
+        gap: 5px;
+    }
+
+    .coral-card {
+        min-width: 200px;
+    }
+}
+		
+	footer {
+		background-color: rgba(37, 48, 74, 0.8);
+		color: #e5e5e5;
+		border-top: 2px solid #4a75a8;
+		position: relative;
+		padding: 40px 0;
+		text-align: center;
+		margin-top: auto; /* This makes the footer stick to the bottom */
+		z-index: 3000;
+	}
+
+    
+    @media (max-width: 767px) {
+        .footer h5 {
+            font-size: 1.2rem;
+        }
+
+        .footer .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+	footer h5 {
+    font-weight: bold;
+}	
+		
+		
+		
+</style>
+</head>
+
+
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="UIA Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Library.html">Library</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Codex.html">Codex</a></li>
+                    <li class="nav-item"><a class="nav-link" href="CTA.html">CTA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About Us.html">About Us</a></li>
+                    <li class="nav-item"> <a class="btn cta-btn gradient-btn ms-3" href="Donation.html">Donate Now</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+			
+		
+
+    <section class="hero">
+		<br><br><br><br><br><br>
+		<img src ="HIGHC.png" width = "200px" height = "200px">
+        <h1><b>Codex</b></h1>
+    </section>
+
+	
+		
+   
+			<!-- Navigation Links Section -->
+    <section class="navigation-links text-center py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-3 mb-4">
+                    <a href="Codex.html" class="text-decoration-none">
+                        <div class="card p-3">
+                            <img src="LIST.png" alt="Codex" class="mx-auto">
+                            <h5>List Section </h5>
+                         
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="Codex_Corals.html" class="text-decoration-none">
+                        <div class="card p-3">
+                            <img src="CG.png" alt="Codex Coral Gallery" class="mx-auto">
+                            <h5>Coral Gallery</h5>
+                       
+                        </div>
+                    </a>
+                </div>
+				 <div class="col-md-3 mb-4">
+                    <a href="Codex_Fishes.html" class="text-decoration-none">
+                        <div class="card p-3">
+                            <img src="FG.png" alt="Codex Fish Gallery" class="mx-auto">
+                            <h5>Fish Gallery</h5>
+                       
+                        </div>
+                    </a>
+                </div>
+				
+            </div>
+        </div>
+    </section>
+   
+   
+	<!-- Awareness Tab Section -->
+    <section class="awareness-section">
+        <div class="awareness-card">
+            <h2>List Section</h2>
+        </div>
+    </section>
+
+   <br>
+   <section class="codex-carousel py-5">
+    <div class="container">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Card 1 -->
+                <div class="card coral-card" data-title="Capnella Coral">
+                    <img src="C1.jpg" class="card-img-top" alt="Capnella Coral">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"><b> Capnella Coral </b></h5> </b>
+                        <p class="card-text">soft coral from the family <b> Nephtheidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card coral-card" data-title="Rhodactis Mushrooms">
+                    <img src="C2.jpg" class="card-img-top" alt="Rhodactis Mushrooms">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"> <b>Rhodactis Mushrooms </b></h5> </b> 
+                        <p class="card-text">soft corals classified under the family <b> Discosomatidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card coral-card" data-title="Zoanthus Coral">
+                    <img src="C3.jpg" class="card-img-top" alt="Zoanthus Coral">
+                    <div class="card-body">
+                         <h5 class="card-title"> <b>Zoanthus Coral </b> </h5> 
+                        <p class="card-text">soft corals (often called colonial anemones) from the family <b> Zoanthidae </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Sinularia Coral">
+                    <img src="C4.jpg" class="card-img-top" alt="Sinularia Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Sinularia Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acanthastrea Coral">
+                    <img src="C5.jpg" class="card-img-top" alt="Acanthastrea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acanthastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acropora Coral">
+                    <img src="C6.jpg" class="card-img-top" alt="Acropora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acropora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+		
+				<div class="card coral-card" data-title="Capnella Coral">
+                    <img src="C1.jpg" class="card-img-top" alt="Capnella Coral">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"><b> Capnella Coral </b></h5> </b>
+                        <p class="card-text">soft coral from the family <b> Nephtheidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card coral-card" data-title="Rhodactis Mushrooms">
+                    <img src="C2.jpg" class="card-img-top" alt="Rhodactis Mushrooms">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"> <b>Rhodactis Mushrooms </b></h5> </b> 
+                        <p class="card-text">soft corals classified under the family <b> Discosomatidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card coral-card" data-title="Zoanthus Coral">
+                    <img src="C3.jpg" class="card-img-top" alt="Zoanthus Coral">
+                    <div class="card-body">
+                         <h5 class="card-title"> <b>Zoanthus Coral </b> </h5> 
+                        <p class="card-text">soft corals (often called colonial anemones) from the family <b> Zoanthidae </b> </p>
+                    </div>
+                </div>
+
+				 <div class="card coral-card" data-title="Sinularia Coral">
+                    <img src="C4.jpg" class="card-img-top" alt="Sinularia Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Sinularia Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acanthastrea Coral">
+                    <img src="C5.jpg" class="card-img-top" alt="Acanthastrea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acanthastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acropora Coral">
+                    <img src="C6.jpg" class="card-img-top" alt="Acropora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acropora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+		
+
+				 <div class="card coral-card" data-title="Capnella Coral">
+                    <img src="C1.jpg" class="card-img-top" alt="Capnella Coral">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"><b> Capnella Coral </b></h5> </b>
+                        <p class="card-text">soft coral from the family <b> Nephtheidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card coral-card" data-title="Rhodactis Mushrooms">
+                    <img src="C2.jpg" class="card-img-top" alt="Rhodactis Mushrooms">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"> <b>Rhodactis Mushrooms </b></h5> </b> 
+                        <p class="card-text">soft corals classified under the family <b> Discosomatidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card coral-card" data-title="Zoanthus Coral">
+                    <img src="C3.jpg" class="card-img-top" alt="Zoanthus Coral">
+                    <div class="card-body">
+                         <h5 class="card-title"> <b>Zoanthus Coral </b> </h5> 
+                        <p class="card-text">soft corals (often called colonial anemones) from the family <b> Zoanthidae </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Sinularia Coral">
+                    <img src="C4.jpg" class="card-img-top" alt="Sinularia Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Sinularia Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acanthastrea Coral">
+                    <img src="C5.jpg" class="card-img-top" alt="Acanthastrea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acanthastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acropora Coral">
+                    <img src="C6.jpg" class="card-img-top" alt="Acropora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acropora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+		
+	
+
+				<div class="card coral-card" data-title="Capnella Coral">
+                    <img src="C1.jpg" class="card-img-top" alt="Capnella Coral">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"><b> Capnella Coral </b></h5> </b>
+                        <p class="card-text">soft coral from the family <b> Nephtheidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card coral-card" data-title="Rhodactis Mushrooms">
+                    <img src="C2.jpg" class="card-img-top" alt="Rhodactis Mushrooms">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"> <b>Rhodactis Mushrooms </b></h5> </b> 
+                        <p class="card-text">soft corals classified under the family <b> Discosomatidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card coral-card" data-title="Zoanthus Coral">
+                    <img src="C3.jpg" class="card-img-top" alt="Zoanthus Coral">
+                    <div class="card-body">
+                         <h5 class="card-title"> <b>Zoanthus Coral </b> </h5> 
+                        <p class="card-text">soft corals (often called colonial anemones) from the family <b> Zoanthidae </b> </p>
+                    </div>
+                </div>
+
+				 <div class="card coral-card" data-title="Sinularia Coral">
+                    <img src="C4.jpg" class="card-img-top" alt="Sinularia Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Sinularia Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acanthastrea Coral">
+                    <img src="C5.jpg" class="card-img-top" alt="Acanthastrea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acanthastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Acropora Coral">
+                    <img src="C6.jpg" class="card-img-top" alt="Acropora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acropora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+		
+
+				<div class="card coral-card" data-title="Capnella Coral">
+                    <img src="C1.jpg" class="card-img-top" alt="Capnella Coral">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"><b> Capnella Coral </b></h5> </b>
+                        <p class="card-text">soft coral from the family <b> Nephtheidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card coral-card" data-title="Rhodactis Mushrooms">
+                    <img src="C2.jpg" class="card-img-top" alt="Rhodactis Mushrooms">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"> <b>Rhodactis Mushrooms </b></h5> </b> 
+                        <p class="card-text">soft corals classified under the family <b> Discosomatidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card coral-card" data-title="Zoanthus Coral">
+                    <img src="C3.jpg" class="card-img-top" alt="Zoanthus Coral">
+                    <div class="card-body">
+                         <h5 class="card-title"> <b>Zoanthus Coral </b> </h5> 
+                        <p class="card-text">soft corals (often called colonial anemones) from the family <b> Zoanthidae </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Sinularia Coral">
+                    <img src="C4.jpg" class="card-img-top" alt="Sinularia Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Sinularia Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acanthastrea Coral">
+                    <img src="C5.jpg" class="card-img-top" alt="Acanthastrea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acanthastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acropora Coral">
+                    <img src="C6.jpg" class="card-img-top" alt="Acropora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acropora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+		
+		
+				<div class="card coral-card" data-title="Capnella Coral">
+                    <img src="C1.jpg" class="card-img-top" alt="Capnella Coral">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"><b> Capnella Coral </b></h5> </b>
+                        <p class="card-text">soft coral from the family <b> Nephtheidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card coral-card" data-title="Rhodactis Mushrooms">
+                    <img src="C2.jpg" class="card-img-top" alt="Rhodactis Mushrooms">
+                    <div class="card-body">
+                        <b> <h5 class="card-title"> <b>Rhodactis Mushrooms </b></h5> </b> 
+                        <p class="card-text">soft corals classified under the family <b> Discosomatidae </b> </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card coral-card" data-title="Zoanthus Coral">
+                    <img src="C3.jpg" class="card-img-top" alt="Zoanthus Coral">
+                    <div class="card-body">
+                         <h5 class="card-title"> <b>Zoanthus Coral </b> </h5> 
+                        <p class="card-text">soft corals (often called colonial anemones) from the family <b> Zoanthidae </b> </p>
+                    </div>
+                </div>
+
+				 <div class="card coral-card" data-title="Sinularia Coral">
+                    <img src="C4.jpg" class="card-img-top" alt="Sinularia Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Sinularia Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acanthastrea Coral">
+                    <img src="C5.jpg" class="card-img-top" alt="Acanthastrea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acanthastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Acropora Coral">
+                    <img src="C6.jpg" class="card-img-top" alt="Acropora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Acropora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+			
+				<div class="card coral-card" data-title="Alveopora Coral">
+                    <img src="C7.jpg" class="card-img-top" alt="Alveopora Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Alveopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Caulastraea Coral">
+                    <img src="C8.jpg" class="card-img-top" alt="Caulastraea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Caulastraea furcata Coral">
+                    <img src="C9.jpg" class="card-img-top" alt="Caulastraea furcata Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea furcata Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Cladiella Coral">
+                    <img src="C10.jpg" class="card-img-top" alt="Cladiella Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cladiella Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b>  </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Diploastrea Coral">
+                    <img src="C11.jpg" class="card-img-top" alt="Diploastrea Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Diploastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Diploastreidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Echinophyllia Coral">
+                    <img src="C12.jpg" class="card-img-top" alt="Echinophyllia Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Echinophyllia Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Alveopora Coral">
+                    <img src="C7.jpg" class="card-img-top" alt="Alveopora Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Alveopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Caulastraea Coral">
+                    <img src="C8.jpg" class="card-img-top" alt="Caulastraea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Caulastraea furcata Coral">
+                    <img src="C9.jpg" class="card-img-top" alt="Caulastraea furcata Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea furcata Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Cladiella Coral">
+                    <img src="C10.jpg" class="card-img-top" alt="Cladiella Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cladiella Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b>  </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Diploastrea Coral">
+                    <img src="C11.jpg" class="card-img-top" alt="Diploastrea Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Diploastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Diploastreidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Echinophyllia Coral">
+                    <img src="C12.jpg" class="card-img-top" alt="Echinophyllia Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Echinophyllia Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+				
+
+				<div class="card coral-card" data-title="Alveopora Coral">
+                    <img src="C7.jpg" class="card-img-top" alt="Alveopora Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Alveopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Caulastraea Coral">
+                    <img src="C8.jpg" class="card-img-top" alt="Caulastraea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Caulastraea furcata Coral">
+                    <img src="C9.jpg" class="card-img-top" alt="Caulastraea furcata Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea furcata Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Cladiella Coral">
+                    <img src="C10.jpg" class="card-img-top" alt="Cladiella Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cladiella Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b>  </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Diploastrea Coral">
+                    <img src="C11.jpg" class="card-img-top" alt="Diploastrea Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Diploastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Diploastreidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Echinophyllia Coral">
+                    <img src="C12.jpg" class="card-img-top" alt="Echinophyllia Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Echinophyllia Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+	
+
+				<div class="card coral-card" data-title="Alveopora Coral">
+                    <img src="C7.jpg" class="card-img-top" alt="Alveopora Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Alveopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Caulastraea Coral">
+                    <img src="C8.jpg" class="card-img-top" alt="Caulastraea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Caulastraea furcata Coral">
+                    <img src="C9.jpg" class="card-img-top" alt="Caulastraea furcata Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea furcata Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Cladiella Coral">
+                    <img src="C10.jpg" class="card-img-top" alt="Cladiella Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cladiella Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b>  </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Diploastrea Coral">
+                    <img src="C11.jpg" class="card-img-top" alt="Diploastrea Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Diploastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Diploastreidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Echinophyllia Coral">
+                    <img src="C12.jpg" class="card-img-top" alt="Echinophyllia Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Echinophyllia Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+				
+				
+				<div class="card coral-card" data-title="Alveopora Coral">
+                    <img src="C7.jpg" class="card-img-top" alt="Alveopora Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Alveopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Caulastraea Coral">
+                    <img src="C8.jpg" class="card-img-top" alt="Caulastraea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Caulastraea furcata Coral">
+                    <img src="C9.jpg" class="card-img-top" alt="Caulastraea furcata Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea furcata Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Cladiella Coral">
+                    <img src="C10.jpg" class="card-img-top" alt="Cladiella Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cladiella Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b>  </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Diploastrea Coral">
+                    <img src="C11.jpg" class="card-img-top" alt="Diploastrea Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Diploastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Diploastreidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Echinophyllia Coral">
+                    <img src="C12.jpg" class="card-img-top" alt="Echinophyllia Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Echinophyllia Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Alveopora Coral">
+                    <img src="C7.jpg" class="card-img-top" alt="Alveopora Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Alveopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Acroporidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Caulastraea Coral">
+                    <img src="C8.jpg" class="card-img-top" alt="Caulastraea Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Caulastraea furcata Coral">
+                    <img src="C9.jpg" class="card-img-top" alt="Caulastraea furcata Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Caulastraea furcata Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Cladiella Coral">
+                    <img src="C10.jpg" class="card-img-top" alt="Cladiella Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cladiella Coral </b> </h5>
+                        <p class="card-text">soft coral from the family <b> Alcyoniidae. </b>  </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Diploastrea Coral">
+                    <img src="C11.jpg" class="card-img-top" alt="Diploastrea Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Diploastrea Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Diploastreidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Echinophyllia Coral">
+                    <img src="C12.jpg" class="card-img-top" alt="Echinophyllia Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Echinophyllia Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+			
+				
+				 <div class="card coral-card" data-title="Cat Eye's Coral">
+                    <img src="C13.jpg" class="card-img-top" alt="Cat Eye's Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cat Eye's Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				  <div class="card coral-card" data-title="Discosoma Mushrooms">
+                    <img src="C14.jpg" class="card-img-top" alt="Discosoma Mushrooms">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Discosoma Mushrooms</b> </h5>
+                        <p class="card-text">soft corals from the family <b> Discosomatidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Echinopora Coral">
+                    <img src="C15.jpg" class="card-img-top" alt="Echinopora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Echinopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Entacmaea Anemone">
+                    <img src="C16.jpg" class="card-img-top" alt="Entacmaea Anemone">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Entacmaea Anemone </b> </h5>
+                        <p class="card-text">commonly known as the Bubble Tip Anemone, is a sea anemone from the family <b> Actiniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Hammer Coral">
+                    <img src="C17.jpg" class="card-img-top" alt="Hammer Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Hammer Coral </b> </h5>
+                        <p class="card-text">formerly classified under <i> Euphyllia </i> , hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Torch Coral">
+                    <img src="C18.jpg" class="card-img-top" alt="Torch Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Torch Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+
+					
+				<div class="card coral-card" data-title="Cat Eye's Coral">
+                    <img src="C13.jpg" class="card-img-top" alt="Cat Eye's Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cat Eye's Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				   <div class="card coral-card" data-title="Discosoma Mushrooms">
+                    <img src="C14.jpg" class="card-img-top" alt="Discosoma Mushrooms">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Discosoma Mushrooms</b> </h5>
+                        <p class="card-text">soft corals from the family <b> Discosomatidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Echinopora Coral">
+                    <img src="C15.jpg" class="card-img-top" alt="Echinopora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Echinopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Entacmaea Anemone">
+                    <img src="C16.jpg" class="card-img-top" alt="Entacmaea Anemone">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Entacmaea Anemone </b> </h5>
+                        <p class="card-text">commonly known as the Bubble Tip Anemone, is a sea anemone from the family <b> Actiniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Hammer Coral">
+                    <img src="C17.jpg" class="card-img-top" alt="Hammer Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Hammer Coral </b> </h5>
+                        <p class="card-text">formerly classified under <i> Euphyllia </i> , hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Torch Coral">
+                    <img src="C18.jpg" class="card-img-top" alt="Torch Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Torch Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				 <div class="card coral-card" data-title="Cat Eye's Coral">
+                    <img src="C13.jpg" class="card-img-top" alt="Cat Eye's Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cat Eye's Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				   <div class="card coral-card" data-title="Discosoma Mushrooms">
+                    <img src="C14.jpg" class="card-img-top" alt="Discosoma Mushrooms">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Discosoma Mushrooms</b> </h5>
+                        <p class="card-text">soft corals from the family <b> Discosomatidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Echinopora Coral">
+                    <img src="C15.jpg" class="card-img-top" alt="Echinopora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Echinopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Entacmaea Anemone">
+                    <img src="C16.jpg" class="card-img-top" alt="Entacmaea Anemone">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Entacmaea Anemone </b> </h5>
+                        <p class="card-text">commonly known as the Bubble Tip Anemone, is a sea anemone from the family <b> Actiniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Hammer Coral">
+                    <img src="C17.jpg" class="card-img-top" alt="Hammer Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Hammer Coral </b> </h5>
+                        <p class="card-text">formerly classified under <i> Euphyllia </i> , hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Torch Coral">
+                    <img src="C18.jpg" class="card-img-top" alt="Torch Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Torch Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+					 <div class="card coral-card" data-title="Cat Eye's Coral">
+                    <img src="C13.jpg" class="card-img-top" alt="Cat Eye's Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cat Eye's Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				   <div class="card coral-card" data-title="Discosoma Mushrooms">
+                    <img src="C14.jpg" class="card-img-top" alt="Discosoma Mushrooms">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Discosoma Mushrooms</b> </h5>
+                        <p class="card-text">soft corals from the family <b> Discosomatidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Echinopora Coral">
+                    <img src="C15.jpg" class="card-img-top" alt="Echinopora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Echinopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Entacmaea Anemone">
+                    <img src="C16.jpg" class="card-img-top" alt="Entacmaea Anemone">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Entacmaea Anemone </b> </h5>
+                        <p class="card-text">commonly known as the Bubble Tip Anemone, is a sea anemone from the family <b> Actiniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Hammer Coral">
+                    <img src="C17.jpg" class="card-img-top" alt="Hammer Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Hammer Coral </b> </h5>
+                        <p class="card-text">formerly classified under <i> Euphyllia </i> , hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Torch Coral">
+                    <img src="C18.jpg" class="card-img-top" alt="Torch Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Torch Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+
+				 <div class="card coral-card" data-title="Cat Eye's Coral">
+                    <img src="C13.jpg" class="card-img-top" alt="Cat Eye's Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cat Eye's Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				   <div class="card coral-card" data-title="Discosoma Mushrooms">
+                    <img src="C14.jpg" class="card-img-top" alt="Discosoma Mushrooms">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Discosoma Mushrooms</b> </h5>
+                        <p class="card-text">soft corals from the family <b> Discosomatidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Echinopora Coral">
+                    <img src="C15.jpg" class="card-img-top" alt="Echinopora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Echinopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Entacmaea Anemone">
+                    <img src="C16.jpg" class="card-img-top" alt="Entacmaea Anemone">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Entacmaea Anemone </b> </h5>
+                        <p class="card-text">commonly known as the Bubble Tip Anemone, is a sea anemone from the family <b> Actiniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Hammer Coral">
+                    <img src="C17.jpg" class="card-img-top" alt="Hammer Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Hammer Coral </b> </h5>
+                        <p class="card-text">formerly classified under <i> Euphyllia </i> , hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Torch Coral">
+                    <img src="C18.jpg" class="card-img-top" alt="Torch Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Torch Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+
+				 <div class="card coral-card" data-title="Cat Eye's Coral">
+                    <img src="C13.jpg" class="card-img-top" alt="Cat Eye's Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Cat Eye's Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Lobophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				  <div class="card coral-card" data-title="Discosoma Mushrooms">
+                    <img src="C14.jpg" class="card-img-top" alt="Discosoma Mushrooms">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Discosoma Mushrooms</b> </h5>
+                        <p class="card-text">soft corals from the family <b> Discosomatidae. </b> </p>
+                    </div>
+                </div>
+				
+				<div class="card coral-card" data-title="Echinopora Coral">
+                    <img src="C15.jpg" class="card-img-top" alt="Echinopora Coral">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Echinopora Coral </b> </h5>
+                        <p class="card-text">hard coral (stony coral) from the family <b> Merulinidae. </b> </p>
+                    </div>
+                </div>
+
+				<div class="card coral-card" data-title="Entacmaea Anemone">
+                    <img src="C16.jpg" class="card-img-top" alt="Entacmaea Anemone">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Entacmaea Anemone </b> </h5>
+                        <p class="card-text">commonly known as the Bubble Tip Anemone, is a sea anemone from the family <b> Actiniidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Hammer Coral">
+                    <img src="C17.jpg" class="card-img-top" alt="Hammer Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Hammer Coral </b> </h5>
+                        <p class="card-text">formerly classified under <i> Euphyllia </i> , hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+
+
+				<div class="card coral-card" data-title="Torch Coral">
+                    <img src="C18.jpg" class="card-img-top" alt="Torch Coral">
+                    <div class="card-body">
+                       <h5 class="card-title"> <b>Torch Coral </b> </h5>
+                        <p class="card-text"> hard coral (stony coral) from the family <b> Caryophylliidae. </b> </p>
+                    </div>
+                </div>
+			
+			
+                <!-- Repeat or Add More Cards as Needed -->
+            </div>
+        </div>
+    </div>
+</section>
+	
+		
+	
+	
+		   <section class="coral-list-section">
+    <div class="container">
+        <h2 class="coral-list-title"> Coral Species List</h2>
+        <ul class="coral-list">
+          <a href="Acanthastrea Coral.html" class="text-decoration-none"> <li>Acanthastrea Coral</li> </a>
+          <a href="Acropora Coral.html" class="text-decoration-none"> <li>Acropora Coral</li> </a>
+          <a href="Alveopora Coral.html" class="text-decoration-none"> <li>Alveopora Coral</li> </a>
+          <a href="Capnella Coral.html" class="text-decoration-none"> <li>Capnella Coral</li> </a>
+          <a href="Caulastraea Coral.html" class="text-decoration-none"> <li>Caulastraea Coral</li> </a>
+          <a href="Caulastraea furcata Coral.html" class="text-decoration-none"> <li>Caulastraea furcata Coral</li> </a>
+          <a href="Cat Eye's Coral.html" class="text-decoration-none"> <li>Cat Eye's Coral</li> </a>
+          <a href="Cladiella Coral.html" class="text-decoration-none"> <li>Cladiella Coral</li> </a>
+          <a href="Diploastrea Coral.html" class="text-decoration-none"> <li>Diploastrea Coral</li> </a>
+          <a href="Discosoma Mushrooms.html" class="text-decoration-none"> <li>Discosoma Mushrooms</li> </a>
+          <a href="Echinophyllia Coral.html" class="text-decoration-none"> <li>Echinophyllia Coral</li> </a>
+          <a href="Echinopora Coral.html" class="text-decoration-none"> <li>Echinopora Coral</li> </a>
+          <a href="Entacmaea Anemone.html" class="text-decoration-none"> <li>Entacmaea Anemone</li> </a>
+          <a href="Hammer Coral.html" class="text-decoration-none"> <li>Hammer Coral</li> </a>
+          <a href="Rhodactis Mushrooms.html" class="text-decoration-none"> <li>Rhodactis Mushrooms</li> </a>
+          <a href="Sinularia Coral.html" class="text-decoration-none"> <li>Sinularia Coral</li> </a>
+          <a href="Torch Coral.html" class="text-decoration-none"> <li>Torch Coral</li> </a>
+          <a href="Zoanthus Coral.html" class="text-decoration-none"> <li>Zoanthus Coral</li> </a>
+        </ul>
+		
+		<br><br>
+		<h2 class="coral-list-title"> Fish Species List</h2>
+		<ul class="coral-list">
+          <a href="Bangka.html" class="text-decoration-none"> <li>Bangka</li> </a>
+          <a href="Bangus.html" class="text-decoration-none"> <li>Bangus</li> </a>
+          <a href="Bisugo.html" class="text-decoration-none"> <li>Banggus</li> </a>
+          <a href="Buri.html" class="text-decoration-none"> <li>Buri</li> </a>
+          <a href="Dalagang Bukid.html" class="text-decoration-none"> <li>Dalagang Bukid</li> </a>
+          <a href="Labahita.html" class="text-decoration-none"> <li>Labahita</li> </a>
+          <a href="Lapu-lapu.html" class="text-decoration-none"> <li>Lapu-lapu </li> </a>  
+          <a href="Magsanggi.html" class="text-decoration-none"> <li>Magsanggi</li> </a>
+          <a href="Maya-maya.html" class="text-decoration-none"> <li>Maya-maya</li> </a>
+          <a href="Paku.html" class="text-decoration-none"> <li>Paku</li> </a>
+          <a href="Pompano.html" class="text-decoration-none"> <li>Pompano</li> </a>
+          <a href="Puntillias.html" class="text-decoration-none"> <li>Puntillias</li> </a>
+          <a href="Sapsap.html" class="text-decoration-none"> <li>Sapsap</li> </a>
+          <a href="Tamban.html" class="text-decoration-none"> <li>Tamban</li> </a>
+		  <a href="Tambakol.html" class="text-decoration-none"> <li>Tambakol</li> </a>
+          <a href="Tuna.html" class="text-decoration-none"> <li>Tuna</li> </a>
+          <a href="Tilapia.html" class="text-decoration-none"> <li>Tilapia</li> </a>
+		  <a href="Kitang.html" class="text-decoration-none"> <li>Kitang</li> </a>
+        </ul>
+		
+		
+    </div>
+	
+	
+	
+         </section>
+		
+			
+		
+			
+   <br><br><br><br><br><br><br>
+
+
+	
+
+
+
+
+
+
+
+<footer style="background-color: #141c2e; color: #e5e5e5; padding: 40px 0; text-align: center;">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <!-- Contact Information -->
+            <div class="col-md-4 mb-4">
+                <h5 class="cta-heading" style="color: #a1c7db;">Contact Us</h5>
+                <p>Email: <a href="mailto:20231000504@feualabang.edu.ph" style="color: #6ea2e2; text-decoration: none;">20231000504@feualabang.edu.ph</a></p>
+                <p>Mobile Phone: <a href="tel:+639606892550" style="color: #6ea2e2; text-decoration: none;">+63 960 689 2550</a></p>
+            </div>
+            <!-- Location -->
+            <div class="col-md-4 mb-4">
+                <h5 class="cta-heading" style="color: #a1c7db;">Location</h5>
+                <p>AquaVive, owned by UIA (Undergraduates in Action)</p>
+                <p>Corporate Woods cor. South Corporate Avenues, Wood District, Filinvest City, Alabang, Muntinlupa City 1781.</p>
+            </div>
+            <!-- Social Media -->
+            <div class="col-md-4 mb-4">
+                <h5 class="cta-heading" style="color: #a1c7db;">Follow Us</h5>
+                <p>Stay connected on our social platforms:</p>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-link" style="color: #6ea2e2; text-decoration: none;">
+                    <img src="YT.png" alt="YouTube" style="width: 40px; height: auto;">
+                </a>
+                <!-- Add more social media links here as needed -->
+            </div>
+        </div>
+
+        <hr style="border-color: #4a75a8; margin-top: 30px;">
+        
+        <div class="row">
+            <div class="col-12">
+                <p style="font-size: 0.9rem;">&copy; 2025 AquaVive | All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+		
+
+<script>
+			document.querySelectorAll('.nav-link').forEach(function(link) {
+		link.addEventListener('click', function() {
+			// Remove 'active' class from all nav-links
+			document.querySelectorAll('.nav-link').forEach(function(nav) {
+				nav.classList.remove('active');
+			});
+
+			// Add 'active' class to the clicked link
+			this.classList.add('active');
+				});
+			});
+		</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

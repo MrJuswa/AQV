@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaVive | Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+
+     <style>
+          body {
+            background-image: url(https://img.huffingtonpost.com/asset/596359141500002000bfcc70.jpeg?ops=1778_1000.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #e5e5e5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            animation: moveBackground 30s infinite alternate ease-in-out;
+            flex: 1 0 auto;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, #25304a, #141c2e);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #4a75a8;
+            padding-left: 20px;
+            height: 80px;
+            z-index: 3000;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar-brand span {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            margin: 0 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s ease, color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: #4a75a8;
+            left: 50%;
+            bottom: -5px;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .nav-link:hover {
+            transform: scale(1.1);
+            color: #4a75a8 !important;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-link.active {
+            color: #6ea2e2 !important;
+        }
+
+        @media (max-width: 991px) {
+            .navbar {
+                height: 80px;
+                display: flex;
+                align-items: center;
+                padding: 0 15px;
+            }
+
+            .navbar-toggler {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-color: white !important;
+            }
+
+            .navbar-toggler-icon {
+                filter: invert(1);
+                background-color: white;
+            }
+
+            .navbar-collapse {
+                background: linear-gradient(135deg, #25304a, #141c2e);
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            .nav-item {
+                text-align: center;
+            }
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            background-color: #4a75a8;
+            border: none;
+            padding: 10px 20px;
+            color: #ffffff;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #6ea2e2;
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 50vh;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0;
+            max-width: 100vw;
+        }
+
+        .hero h1 {
+            font-family: 'Helvetica';
+            font-size: 5rem;
+            color: #FFD700;
+            position: relative;
+            z-index: 1;
+        }
+        .hero p {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 200;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            letter-spacing: 1px;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: center top;
+            }
+
+            50% {
+                background-position: center center;
+            }
+
+            100% {
+                background-position: center bottom;
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow: visible;
+            }
+           
+            .cta-btn {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+            footer {
+                padding: 20px 0;
+            }
+            footer h5 {
+                font-size: 1rem;
+            }
+        }
+
+        .gradient-btn {
+            background: linear-gradient(135deg, #5b8cea, #e910fc);
+            color: #ffffff !important;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .gradient-btn:hover {
+            background: linear-gradient(135deg, #e910fc, #5b8cea);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background-color: rgba(37, 48, 74, 0.8);
+            color: #e5e5e5;
+            border-top: 2px solid #4a75a8;
+            position: relative;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: auto;
+            z-index: 3000;
+        }
+
+        footer h5 {
+            font-weight: bold;
+        }
+
+       
+		
+        /* Navigation Links Section */
+        .navigation-links .card {
+            background-color: rgba(37, 48, 74, 0.8);
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .navigation-links .card img {
+            width: 60px;
+            height: 60px;
+            margin: 15px auto 0;
+        }
+
+        .navigation-links h5 {
+            margin: 15px 0 10px;
+            font-size: 1.25rem;
+            font-weight: bold !important;
+            color: white !important;
+        }
+
+        .navigation-links p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .navigation-links .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+            background-color: rgba(46, 61, 90, 0.9);
+			border: 3px solid white; /* Add a white border on hover */
+        }
+		
+		.awareness-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .awareness-card {
+            background-color: rgba(75, 46, 97, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 15px 20px;
+            text-align: center;
+            width: 1290px;
+        }
+
+        .awareness-card h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFD700 !important;
+            margin: 0;
+        }
+		
+		.instructions {
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0.7);
+			color: #e5e5e5;
+			padding: 20px;
+			border-radius: 10px;
+			max-width: 800px;
+			margin: 20px auto;
+		}
+
+		.instructions h2 {
+			font-size: 1.8rem;
+			font-weight: bold;
+			color: #FFD700;
+		}
+
+		.instructions ul {
+			list-style-type: none;
+			padding: 0;
+			font-size: 1.2rem;
+		}
+
+		.instructions li {
+			margin: 10px 0;
+		}
+		
+		
+		
+		
+		 #game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: rgba(0, 0, 0, 0.6);
+            border-top: 2px solid #4a75a8;
+            border-bottom: 2px solid #4a75a8;
+        }
+
+        canvas {
+            background: url('BGG.jpg') center/cover;
+            border: 2px solid #4a75a8;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        #game-over {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        #start-btn {
+            position: absolute;
+            background: #4a75a8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        #start-btn:hover {
+            background: #6ea2e2;
+        }
+
+        button {
+            background: #4a75a8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #6ea2e2;
+        }
+		
+		
+    </style>
+</head>
+
+	<body>
+	
+	
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="UIA Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Library.html">Library</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Codex.html">Codex</a></li>
+                    <li class="nav-item"><a class="nav-link" href="CTA.html">CTA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About Us.html">About Us</a></li>
+                    <li class="nav-item"> <a class="btn cta-btn gradient-btn ms-3" href="Donation.html">Donate Now</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	
+	
+	<section class="hero">
+		<br><br><br><br><br><br>
+		<img src="HIGHL.png" width="200px" height="200px">
+        <h1><b>Library</b></h1>
+		
+    </section>
+
+	
+	
+    <!-- Navigation Links Section -->
+    <section class="navigation-links text-center py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-3 mb-4">
+                    <a href="Library.html" class="text-decoration-none">
+                        <div class="card p-3">
+                            <img src="IS.png" alt="Library" class="mx-auto">
+                            <h5>Information Section </h5>
+                         
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="Library_Game.html" class="text-decoration-none">
+                        <div class="card p-3">
+                            <img src="DODGE.png" alt="Codex" class="mx-auto">
+                            <h5>Dodge the Trash!</h5>
+                       
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Awareness Tab Section -->
+    <section class="awareness-section">
+        <div class="awareness-card">
+            <h2>Dodge the Trash!</h2>
+        </div>
+    </section>
+
+	
+		<br>
+	
+	
+	
+	
+	<div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="game-over" class="hidden">
+            <h2>Game Over!</h2>
+            <p>Your score: <span id="final-score"></span></p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+        <button id="start-btn">Click if you're ready!</button>
+    </div>
+	
+	
+	<div class="instructions">
+    <h2>Game Controls</h2>
+    <ul>
+        <li><b>Desktop:</b> Use <strong>WASD</strong> keys to move the fish.</li>
+        <li><b>Tablet/Mobile:</b> Tap anywhere on the screen to control the fish's movement.</li>
+    </ul>
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+<br><br><br><br>
+
+	
+<footer style="background-color: #141c2e; color: #e5e5e5; padding: 40px 0; text-align: center;">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <!-- Contact Information -->
+            <div class="col-md-4 mb-4">
+                <h5 class="cta-heading" style="color: #a1c7db;">Contact Us</h5>
+                <p>Email: <a href="mailto:20231000504@feualabang.edu.ph" style="color: #6ea2e2; text-decoration: none;">20231000504@feualabang.edu.ph</a></p>
+                <p>Mobile Phone: <a href="tel:+639606892550" style="color: #6ea2e2; text-decoration: none;">+63 960 689 2550</a></p>
+            </div>
+            <!-- Location -->
+            <div class="col-md-4 mb-4">
+                <h5 class="cta-heading" style="color: #a1c7db;">Location</h5>
+                <p>AquaVive, owned by UIA (Undergraduates in Action)</p>
+                <p>Corporate Woods cor. South Corporate Avenues, Wood District, Filinvest City, Alabang, Muntinlupa City 1781.</p>
+            </div>
+            <!-- Social Media -->
+            <div class="col-md-4 mb-4">
+                <h5 class="cta-heading" style="color: #a1c7db;">Follow Us</h5>
+                <p>Stay connected on our social platforms:</p>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-link" style="color: #6ea2e2; text-decoration: none;">
+                    <img src="YT.png" alt="YouTube" style="width: 40px; height: auto;">
+                </a>
+                <!-- Add more social media links here as needed -->
+            </div>
+        </div>
+
+        <hr style="border-color: #4a75a8; margin-top: 30px;">
+        
+        <div class="row">
+            <div class="col-12">
+                <p style="font-size: 0.9rem;">&copy; 2025 AquaVive | All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = 800;
+    canvas.height = 400;
+
+    const fishImg = new Image();
+    fishImg.src = "FISH.png"; // Replace with your fish image path
+    const trashImgs = [new Image(), new Image(), new Image()];
+    trashImgs[0].src = "TRASH1.png"; // Replace with your trash image paths
+    trashImgs[1].src = "TRASH2.png";
+    trashImgs[2].src = "TRASH3.png";
+
+    let fish = { x: 50, y: 200, width: 60, height: 60, speed: 4, dx: 0, dy: 0 };
+    let obstacles = [];
+    let frame = 0;
+    let score = 0;
+    let gameOver = false;
+
+    // WASD controls (case-insensitive)
+    document.addEventListener("keydown", (e) => {
+        const key = e.key.toLowerCase(); // Convert to lowercase for case-insensitivity
+        if (key === "w" || key === "ArrowUp") fish.dy = -fish.speed;
+        if (key === "s" || key === "ArrowDown") fish.dy = fish.speed;
+        if (key === "a" || key === "ArrowLeft") fish.dx = -fish.speed;
+        if (key === "d" || key === "ArrowRight") fish.dx = fish.speed;
+    });
+
+    document.addEventListener("keyup", (e) => {
+        const key = e.key.toLowerCase(); // Convert to lowercase for case-insensitivity
+        if (key === "w" || key === "ArrowUp" || key === "s" || key === "ArrowDown") fish.dy = 0;
+        if (key === "a" || key === "ArrowLeft" || key === "d" || key === "ArrowRight") fish.dx = 0;
+    });
+
+    // Mouse or touch input (smooth transition instead of teleport)
+    function moveFishToPosition(x, y) {
+        const dx = x - fish.x;
+        const dy = y - fish.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance <= fish.speed) {
+            // If the fish is very close to the target, stop it at the position
+            fish.x = x;
+            fish.y = y;
+            fish.dx = 0;
+            fish.dy = 0;
+        } else {
+            // Normalize movement to the given speed
+            fish.dx = (dx / distance) * fish.speed;
+            fish.dy = (dy / distance) * fish.speed;
+        }
+    }
+
+    // Event listener for mouse or touch
+    canvas.addEventListener("click", (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        moveFishToPosition(x, y);
+    });
+
+    canvas.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        const rect = canvas.getBoundingClientRect();
+        const x = e.touches[0].clientX - rect.left;
+        const y = e.touches[0].clientY - rect.top;
+
+        moveFishToPosition(x, y);
+    });
+
+    // Update game logic
+    function updateGame() {
+        if (gameOver) return;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        fish.x += fish.dx;
+        fish.y += fish.dy;
+
+        // Prevent fish from going off canvas
+        if (fish.y < 0) fish.y = 0;
+        if (fish.y + fish.height > canvas.height) fish.y = canvas.height - fish.height;
+        if (fish.x < 0) fish.x = 0;
+        if (fish.x + fish.width > canvas.width) fish.x = canvas.width - fish.width;
+
+        ctx.drawImage(fishImg, fish.x, fish.y, fish.width, fish.height);
+
+        if (frame % 90 === 0) {
+            const randomTrashIndex = Math.floor(Math.random() * trashImgs.length);
+            obstacles.push({
+                x: canvas.width,
+                y: Math.random() * (canvas.height - 40),
+                width: 40,
+                height: 40,
+                speed: 3 + Math.floor(score / 10),
+                trashImg: trashImgs[randomTrashIndex]
+            });
+        }
+
+        obstacles.forEach((obs, i) => {
+            obs.x -= obs.speed;
+            ctx.drawImage(obs.trashImg, obs.x, obs.y, obs.width, obs.height);
+
+            if (obs.x + obs.width < 0) {
+                obstacles.splice(i, 1);
+                score++;
+            }
+
+            if (fish.x < obs.x + obs.width && fish.x + fish.width > obs.x && fish.y < obs.y + obs.height && fish.y + fish.height > obs.y) {
+                endGame();
+            }
+        });
+
+        frame++;
+        ctx.fillStyle = "white";
+        ctx.font = "20px Arial";
+        ctx.fillText("Score: " + score, 10, 30);
+
+        requestAnimationFrame(updateGame);
+    }
+
+    function endGame() {
+        gameOver = true;
+        document.getElementById("game-over").style.display = "block";
+        document.getElementById("final-score").innerText = score;
+    }
+
+    function restartGame() {
+        fish.x = 50;
+        fish.y = 200;
+        fish.dx = 0;
+        fish.dy = 0;
+        obstacles = [];
+        score = 0;
+        frame = 0;
+        gameOver = false;
+        document.getElementById("game-over").style.display = "none";
+        updateGame();
+    }
+
+    document.getElementById("start-btn").addEventListener("click", () => {
+        document.getElementById("start-btn").style.display = "none";
+        updateGame();
+    });
+
+    fishImg.onload = () => {
+        let imagesLoaded = 0;
+        trashImgs.forEach((img) => {
+            img.onload = () => {
+                imagesLoaded++;
+                if (imagesLoaded === trashImgs.length) {
+                    document.getElementById("start-btn").style.display = "block";
+                }
+            };
+        });
+    };
+
+    // Function to adjust for touch or click event position
+    function getMousePosition(e) {
+        let rect = canvas.getBoundingClientRect();
+        let scaleX = canvas.width / rect.width;
+        let scaleY = canvas.height / rect.height;
+
+        // Get the touch or mouse position and adjust for scaling
+        let x = (e.clientX - rect.left) * scaleX;
+        let y = (e.clientY - rect.top) * scaleY;
+
+        return { x: x, y: y };
+    }
+
+    // Mouse or touch input (smooth transition instead of teleport)
+    function moveFishToPosition(x, y) {
+        const dx = x - fish.x;
+        const dy = y - fish.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance <= fish.speed) {
+            // If the fish is very close to the target, stop it at the position
+            fish.x = x;
+            fish.y = y;
+            fish.dx = 0;
+            fish.dy = 0;
+        } else {
+            // Normalize movement to the given speed
+            fish.dx = (dx / distance) * fish.speed;
+            fish.dy = (dy / distance) * fish.speed;
+        }
+    }
+
+    // Event listener for click or touch events
+    canvas.addEventListener("click", (e) => {
+        let position = getMousePosition(e);
+        moveFishToPosition(position.x, position.y);
+    });
+
+    // Also handle touch events for mobile devices
+    canvas.addEventListener("touchstart", (e) => {
+        e.preventDefault(); // Prevents the default touch action (e.g., zooming)
+        let position = getMousePosition(e.touches[0]); // Get the touch position
+        moveFishToPosition(position.x, position.y);
+    });
+</script>
+
+<script>
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            // Remove 'active' class from all nav-links
+            document.querySelectorAll('.nav-link').forEach(function(nav) {
+                nav.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked link
+            this.classList.add('active');
+        });
+    });
+</script>
+
+	
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaVive | Codex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+
+    <style>
+    body {
+        background-image: url(https://img.huffingtonpost.com/asset/596359141500002000bfcc70.jpeg?ops=1778_1000.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #e5e5e5;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        animation: moveBackground 30s infinite alternate ease-in-out;
+		flex: 1 0 auto; /* Allow the body to grow and take remaining space */
+        
+    }
+
+
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+    /* Navbar */
+    .navbar {
+        background: linear-gradient(135deg, #25304a, #141c2e);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        border-bottom: 2px solid #4a75a8;
+        padding-left: 20px;
+        height: 80px;
+		z-index: 3000;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .navbar-brand span {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .nav-link {
+        color: #ffffff !important;
+        margin: 0 10px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: transform 0.3s ease, color 0.3s ease;
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: #4a75a8;
+        left: 50%;
+        bottom: -5px;
+        transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-link:hover {
+        transform: scale(1.1);
+        color: #4a75a8 !important;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
+        left: 0;
+    }
+
+    .nav-link.active {
+        color: #6ea2e2 !important;
+    }
+	
+	
+	 @media (max-width: 991px) {
+            .navbar {
+                height: 80px;
+                display: flex;
+                align-items: center;
+                padding: 0 15px;
+            }
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+            }
+            .navbar-toggler {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-color: white !important;
+            }
+            .navbar-toggler-icon {
+                filter: invert(1);
+				background-color: white;
+            }
+            .navbar-collapse {
+                background: linear-gradient(135deg, #25304a, #141c2e);
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .nav-item {
+                text-align: center;
+            }
+        }
+	
+	
+
+    /* CTA Button */
+    .cta-btn {
+        background-color: #4a75a8;
+        border: none;
+        padding: 10px 20px;
+        color: #ffffff;
+        font-size: 1.1rem;
+        border-radius: 25px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-btn:hover {
+        background-color: #6ea2e2;
+        transform: scale(1.05);
+    }
+
+  
+  
+
+    @keyframes reveal {
+        to {
+            visibility: visible;
+        }
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 8.3ch;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+ 
+
+    /* Move Background Animation */
+    @keyframes moveBackground {
+        0% {
+            background-position: center top;
+        }
+        50% {
+            background-position: center center;
+        }
+        100% {
+            background-position: center bottom;
+        }
+    }
+
+    
+
+    /* Media Queries */
+    @media (max-width: 992px) {
+        .hero h1 {
+            font-size: 5rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        body {
+            overflow: auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+            overflow: visible;
+        }
+    }
+
+
+	  .gradient-btn {
+        background: linear-gradient(135deg, #5b8cea, #e910fc);
+        color: #ffffff !important;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        border-radius: 25px;
+        transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .gradient-btn:hover {
+        background: linear-gradient(135deg, #e910fc, #5b8cea);
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    }
+	
+	/* Hero Section */
+.hero {
+    height: 50vh;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Helvetica';
+    font-size: 5rem;
+    color: #FFD700;
+    z-index: 1;
+}
+	
+	
+	  /* Awareness Tab - Specific CSS */
+        .awareness-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .awareness-card {
+            background-color: rgba(75, 46, 97, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 15px 20px;
+            text-align: center;
+            width: 1290px;
+        }
+
+        .awareness-card h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFD700 !important;
+            margin: 0;
+        }
+	
+	
+	.coral-info {
+		background: rgba(20, 28, 46, 0.9);
+		padding: 40px;
+		border-radius: 10px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+		margin: 50px auto;
+		max-width: 1280px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 20px;
+}
+
+.coral-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #a1c7db;
+    transition: transform 0.3s ease;
+}
+
+.coral-image:hover {
+    transform: scale(1.05);
+}
+
+.coral-details {
+    flex: 1;
+    padding-left: 30px;
+}
+
+/* Text Styling */
+.coral-name {
+    font-size: 2rem;
+    color: #FFD700; /* Yellow */
+    font-weight: bold;
+}
+
+.scientific-name {
+    font-size: 1.5rem;
+    color: #a1c7db; /* Light blue */
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.coral-type {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .coral-info {
+        flex-direction: column; /* Stack elements */
+        text-align: center;
+        padding: 30px;
+    }
+
+    .coral-details {
+        padding-left: 0; /* Center align text */
+    }
+
+    .coral-name {
+        font-size: 1.7rem;
+        margin-top: 20px; /* Added space between the image and name */
+    }
+
+    .scientific-name, 
+    .coral-type {
+        font-size: 1.7rem;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .coral-info {
+        padding: 20px;
+    }
+
+    .coral-name {
+        font-size: 1.4rem;
+        margin-top: 25px; /* Increased space for better readability */
+    }
+
+    .scientific-name, 
+    .coral-type {
+        font-size: 1.4rem;
+    }
+
+    .coral-description {
+        font-size: 1rem;
+    }
+}
+	
+	
+	
+	
+	 footer {
+		background-color: rgba(37, 48, 74, 0.8);
+		color: #e5e5e5;
+		border-top: 2px solid #4a75a8;
+		position: relative;
+		padding: 40px 0;
+		text-align: center;
+		margin-top: auto; /* This makes the footer stick to the bottom */
+		z-index: 3000;
+	}
+
+    
+    @media (max-width: 767px) {
+        .footer h5 {
+            font-size: 1.2rem;
+        }
+
+        .footer .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+	
+		footer h5 {
+    font-weight: bold;
+}
+		
+		
+	
+	
+</style>
+
+</head>
+
+
+
+
+	<body>
+	
+
+
+
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="UIA Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Library.html">Library</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Codex.html">Codex</a></li>
+                    <li class="nav-item"><a class="nav-link" href="CTA.html">CTA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About Us.html">About Us</a></li>
+                    <li class="nav-item"> <a class="btn cta-btn gradient-btn ms-3" href="Donation.html">Donate Now</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+		<section class="hero">
+		<br><br><br><br><br><br>
+		<img src ="HIGHC.png" width = "200px" height = "200px">
+        <h1><b>Codex</b></h1>
+    </section>
+
+		<!-- Awareness Tab Section -->
+    <section class="awareness-section">
+        <div class="awareness-card">
+            <h2>Coral Gallery</h2>
+        </div>
+    </section>
+	
+	
+<section class="coral-info container">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <img src="V2.jpg" alt="Coral Image" class="coral-image">
+        </div>
+        <div class="col-md-6 coral-details">
+            <h2 class="coral-name">Bangus</h2>
+            <h3 class="scientific-name"><i>Chanos chanos</i></h3>
+            <h3 class="coral-type">Milkfish</h3>
+            <p class="coral-description"> &nbsp&nbsp&nbsp&nbsp&nbsp Bangus is a large, silvery fish with a distinctive elongated body, and it is known for its mild flavor and firm texture. It is commonly farmed in aquaculture ponds and found in coastal waters throughout the Philippines, especially in Pangasinan and Batangas.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Library Navigation Section -->
+<section class="text-center py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Back to Library Button -->
+            <div class="col-auto mb-4">
+                <a href="Codex.html" class="btn cta-btn" style="background-color: #4B2E61; color: white; padding: 10px 20px; border-radius: 5px; border: 2px solid white;">
+                    <b>Codex</b>
+                </a>
+            </div>
+
+            <!-- Back Button -->
+            <div class="col-auto mb-4">
+                <a href="Bangka.html" class="btn cta-btn" style="background-color: #4B2E61; color: white; padding: 10px 20px; border-radius: 5px; border: 2px solid white;">
+                    <b>&lt;</b>
+                </a>
+            </div>
+
+            <!-- Next Button -->
+            <div class="col-auto mb-4">
+                <a href="Bisugo.html" class="btn cta-btn" style="background-color: #4B2E61; color: white; padding: 10px 20px; border-radius: 5px; border: 2px solid white;">
+                    <b>&gt;</b>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+	
+	
+<footer style="background-color: #141c2e; color: #e5e5e5; padding: 40px 0; text-align: center;">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <!-- Contact Information -->
+            <div class="col-md-4 mb-4">
+                <h5 class="cta-heading" style="color: #a1c7db;">Contact Us</h5>
+                <p>Email: <a href="mailto:20231000504@feualabang.edu.ph" style="color: #6ea2e2; text-decoration: none;">20231000504@feualabang.edu.ph</a></p>
+                <p>Mobile Phone: <a href="tel:+639606892550" style="color: #6ea2e2; text-decoration: none;">+63 960 689 2550</a></p>
+            </div>
+            <!-- Location -->
+            <div class="col-md-4 mb-4">
+                <h5 class="cta-heading" style="color: #a1c7db;">Location</h5>
+                <p>AquaVive, owned by UIA (Undergraduates in Action)</p>
+                <p>Corporate Woods cor. South Corporate Avenues, Wood District, Filinvest City, Alabang, Muntinlupa City 1781.</p>
+            </div>
+            <!-- Social Media -->
+            <div class="col-md-4 mb-4">
+                <h5 class="cta-heading" style="color: #a1c7db;">Follow Us</h5>
+                <p>Stay connected on our social platforms:</p>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-link" style="color: #6ea2e2; text-decoration: none;">
+                    <img src="YT.png" alt="YouTube" style="width: 40px; height: auto;">
+                </a>
+                <!-- Add more social media links here as needed -->
+            </div>
+        </div>
+
+        <hr style="border-color: #4a75a8; margin-top: 30px;">
+        
+        <div class="row">
+            <div class="col-12">
+                <p style="font-size: 0.9rem;">&copy; 2025 AquaVive | All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+	
+
+   <script>
+			document.querySelectorAll('.nav-link').forEach(function(link) {
+		link.addEventListener('click', function() {
+			// Remove 'active' class from all nav-links
+			document.querySelectorAll('.nav-link').forEach(function(nav) {
+				nav.classList.remove('active');
+			});
+
+			// Add 'active' class to the clicked link
+			this.classList.add('active');
+				});
+			});
+		</script>
+
+	
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+</html>
