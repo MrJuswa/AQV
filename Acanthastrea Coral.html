@@ -249,20 +249,26 @@
 	
 	
 	  /* Awareness Tab - Specific CSS */
-        .awareness-section {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
+       .awareness-section {
+			position: absolute;
+			top: 55vh; /* Adjust this value to align properly */
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			z-index: 1000; /* Ensure it's above other content */
+		}
 
-        .awareness-card {
-            background-color: rgba(75, 46, 97, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            padding: 15px 20px;
-            text-align: center;
-            width: 1290px;
-        }
+		.awareness-card {
+			background-color: rgba(75, 46, 97, 0.9);
+			border-radius: 15px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+			padding: 15px 20px;
+			text-align: center;
+			width: 1290px; /* Keep it fixed */
+			max-width: 90vw; /* Prevent overflow */
+		}
 
         .awareness-card h2 {
             font-size: 1.5rem;
